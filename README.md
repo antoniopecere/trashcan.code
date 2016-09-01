@@ -1,2 +1,2 @@
 # utilities
-Library for utility classes.
+Repository for projects of library with utility classes.
