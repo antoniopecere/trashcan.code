@@ -9,9 +9,18 @@ public class JsonException extends RuntimeException
 		super();
 	}
 	
+	public JsonException( String message )
+	{
+		super( message );
+	}
+	
 	public JsonException( Throwable e )
 	{
 		super( e );
 	}
 	
+	public JsonException( String message, Throwable e )
+	{
+		super( message, e );
+	}
 }

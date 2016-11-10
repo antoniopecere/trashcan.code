@@ -5,9 +5,11 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -62,24 +64,43 @@ public abstract class JsonUtils<T extends Serializable>
 	
 	public JsonUtils()
 	{
-		this.mapper = new ObjectMapper();
-		
-		// (new JsonUtils<SerializableObject>(){}).getClass();
-		Class<?> inheritingClass = this.getClass();
-		
-		// JsonUtils<SerializableObject>
-		Type thisAsSuperclass = inheritingClass.getGenericSuperclass();
-		
-		// SerializableObject.class
-		Type TType = ( (ParameterizedType) thisAsSuperclass ).getActualTypeArguments()[0];
-		
-		this.TClass = (Class<T>) TType;
-		
-		// new SerializableObject[0];
-		this.TArrayInstance = (T[]) Array.newInstance( this.TClass, 0 );
-		
-		// (new SerializableObject[0]).getClass();
-		this.TArrayClass = (Class<T[]>) this.TArrayInstance.getClass();
+		this( null );
+	}
+	
+	public JsonUtils( boolean includeNonNull )
+	{
+		this( includeNonNull ? Include.NON_NULL : null );
+	}
+	
+	private JsonUtils( Include include )
+	{
+		try {
+			
+			this.mapper = new ObjectMapper();
+			
+			if( include != null )
+				this.mapper.setSerializationInclusion( include );
+			
+			// (new JsonUtils<SerializableObject>(){}).getClass();
+			Class<?> inheritingClass = this.getClass();
+			
+			// JsonUtils<SerializableObject>
+			Type thisAsSuperclass = inheritingClass.getGenericSuperclass();
+			
+			// SerializableObject.class
+			Type TType = ( (ParameterizedType) thisAsSuperclass ).getActualTypeArguments()[0];
+			
+			this.TClass = (Class<T>) TType;
+			
+			// new SerializableObject[0];
+			this.TArrayInstance = (T[]) Array.newInstance( this.TClass, 0 );
+			
+			// (new SerializableObject[0]).getClass();
+			this.TArrayClass = (Class<T[]>) this.TArrayInstance.getClass();
+			
+		} catch( Throwable e ) {
+			throw new JsonException( "This instance should belong to an anonymous class!", e );
+		}
 	}
 	
 	public String serializeToJson( T obj )
@@ -128,6 +149,14 @@ public abstract class JsonUtils<T extends Serializable>
 	{
 		T[] objs = this.loadArrayFromJson( jsonObjs );
 		return Arrays.asList( objs );
+	}
+	
+	public String addObject( String jsonObjs, T obj )
+	{
+		List<T> objList = this.loadListFromJson( jsonObjs );
+		objList = new ArrayList<T>( objList );
+		objList.add( obj );
+		return this.serializeListToJson( objList );
 	}
 	
 }
