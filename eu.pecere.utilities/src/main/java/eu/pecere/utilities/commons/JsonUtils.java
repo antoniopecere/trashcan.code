@@ -27,6 +27,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * 	// DECLARING NOTHING!!
  * };
  * 
+ * // If you want the mapper will exclude null fields into the conversion, use instead:
+ * JsonUtils&lt;SerializableObject> jsu = new JsonUtils&lt;SerializableObject>( true ) {
+ * 	// DECLARING NOTHING!!
+ * };
+ * 
  * // Than you can use the methods to serialize or to
  * // un-serialize objects of the type set as generic parameter.
  * 
@@ -50,6 +55,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @param <T>
  *            The class type of the object to be serialized.
  * 
+ * @param excludeNullFileds
+ *            a boolean to choose the including policy of the ObjectMapper used.
+ * 
  * @author Antonio Pecere: 04 ago 2016
  *
  */
@@ -67,9 +75,9 @@ public abstract class JsonUtils<T extends Serializable>
 		this( null );
 	}
 	
-	public JsonUtils( boolean includeNonNull )
+	public JsonUtils( boolean excludeNullFileds )
 	{
-		this( includeNonNull ? Include.NON_NULL : null );
+		this( excludeNullFileds ? Include.NON_NULL : null );
 	}
 	
 	private JsonUtils( Include include )
