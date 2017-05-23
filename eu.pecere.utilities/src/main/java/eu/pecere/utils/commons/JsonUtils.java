@@ -1,4 +1,4 @@
-package eu.pecere.utilities.commons;
+package eu.pecere.utils.commons;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -85,6 +85,7 @@ public abstract class JsonUtils<T extends Serializable>
 		try {
 			
 			this.mapper = new ObjectMapper();
+			// this.mapper.configure( JsonParser.Feature.ALLOW_BACKSLASH_ESCAPING_ANY_CHARACTER, true );
 			
 			if( include != null )
 				this.mapper.setSerializationInclusion( include );

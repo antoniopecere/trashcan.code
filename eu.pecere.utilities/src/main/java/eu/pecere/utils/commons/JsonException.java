@@ -1,4 +1,4 @@
-package eu.pecere.utilities.commons;
+package eu.pecere.utils.commons;
 
 public class JsonException extends RuntimeException
 {
