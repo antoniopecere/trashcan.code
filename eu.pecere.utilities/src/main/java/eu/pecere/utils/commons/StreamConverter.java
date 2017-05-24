@@ -31,7 +31,7 @@ import com.Ostermiller.util.CircularByteBuffer;
  * </code>
  * </pre>
  * 
- * @author Antonio Pecere: 25 mag 2016
+ * @author Antonio Pecere
  *
  */
 public class StreamConverter

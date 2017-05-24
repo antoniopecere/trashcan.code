@@ -1,7 +1,7 @@
 /**
  * This package contains the classes that offer generic utilities for tests.
  * 
- * @author Antonio Pecere: 25 mag 2016
+ * @author Antonio Pecere
  *
  */
 package eu.pecere.utils.test;

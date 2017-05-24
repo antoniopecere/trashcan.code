@@ -12,7 +12,7 @@ import org.jutils.jprocesses.model.ProcessInfo;
 /**
  * Utility class containing methods to manage running processes abstracting from Operating System.
  * 
- * @author Antonio Pecere: 18 mag 2016
+ * @author Antonio Pecere
  *
  */
 public class ProcessUtils

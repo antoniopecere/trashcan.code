@@ -1,4 +1,4 @@
-package eu.pecere.utilities.commons;
+package eu.pecere.utils.commons.tests;
 
 import java.io.Serializable;
 

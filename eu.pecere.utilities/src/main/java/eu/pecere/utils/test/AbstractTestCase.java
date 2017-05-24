@@ -9,7 +9,7 @@ import eu.pecere.utils.commons.ResourceUtils;
 
 /**
  * 
- * @author Antonio Pecere: 10 giu 2016
+ * @author Antonio Pecere
  *
  */
 public abstract class AbstractTestCase

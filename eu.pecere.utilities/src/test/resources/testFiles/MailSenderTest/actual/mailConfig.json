@@ -1,0 +1,18 @@
+	{
+		"smtpHost" : "192.168.221.150",
+		"smtpPort" : "25",
+		"authorization": false,
+		"mailSender": "test100@dominioprova.com",
+		"mailRecipients": ["nomeacaso@dominioprova.it", "antoniopecere@dominioprova.it"],
+		"mailObj": "provaaaa",
+		"mailBody": "provaaaa"
+	},
+	{
+		"smtpHost" : "192.168.221.150",
+		"smtpPort" : "25",
+		"authorization": false,
+		"mailSender": "test100@dominioprova.com",
+		"mailRecipients": ["nomeacaso@dominioprova.it", "antoniopecere@dominioprova.it"],
+		"mailObj": "ciao sono PeppaPig",
+		"mailBody": "ciao sono PeppaPig"
+	}

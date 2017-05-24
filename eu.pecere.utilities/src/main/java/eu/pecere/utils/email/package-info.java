@@ -1,6 +1,7 @@
 /**
+ * This package contains classes implementing some utilities to manage e-mails.
  * 
- * @author Antonio Pecere: 01 set 2016
+ * @author Antonio Pecere
  *
  */
 package eu.pecere.utils.email;

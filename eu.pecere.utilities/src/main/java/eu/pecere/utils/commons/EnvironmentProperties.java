@@ -23,7 +23,7 @@ import org.apache.commons.logging.LogFactory;
  * The program will look into the System properties and the Environment variables for the value assigned to the key
  * "environment_property_name", and use this value to be assigned to the key "property.name".
  * 
- * @author Antonio Pecere: 18 mag 2016
+ * @author Antonio Pecere
  *
  */
 public class EnvironmentProperties extends Properties

@@ -58,7 +58,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * @param excludeNullFileds
  *            a boolean to choose the including policy of the ObjectMapper used.
  * 
- * @author Antonio Pecere: 04 ago 2016
+ * @author Antonio Pecere
  *
  */
 @SuppressWarnings( "unchecked" )

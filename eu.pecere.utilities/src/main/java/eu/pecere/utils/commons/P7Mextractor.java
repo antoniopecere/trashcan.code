@@ -22,10 +22,9 @@ import org.bouncycastle.cms.SignerInformationStore;
 import org.bouncycastle.util.Store;
 
 /**
- * @author Martin Lilliu
- * @date 21 giu 2016
+ * @author Antonio Pecere
  * 
- *       This utility class is used to extract content from PKCS7 file and save the original file.
+ *         This utility class is used to extract content from PKCS7 file and save the original file.
  *
  */
 public class P7Mextractor

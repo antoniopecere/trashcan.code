@@ -1,8 +1,10 @@
 package eu.pecere.utils.commons;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,11 +15,14 @@ import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.io.filefilter.TrueFileFilter;
+import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.commons.lang3.StringUtils;
+
+import net.coobird.thumbnailator.Thumbnails;
 
 /**
  * 
- * @author Antonio Pecere: 10 giu 2016
+ * @author Antonio Pecere
  *
  */
 public class FileUtils
@@ -261,6 +266,21 @@ public class FileUtils
 		} catch( Exception e ) {
 			return null;
 		}
+	}
+	
+	public static InputStream thumbnailator( InputStream inputStream, String extension ) throws IOException
+	{
+		
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		Thumbnails.of( inputStream ).scale( 0.7 ).outputQuality( 0.2f )
+				.outputFormat( extension )
+				.toOutputStream( baos );
+		
+		inputStream.close();
+		inputStream = new ByteArrayInputStream( baos.toByteArray() );
+		
+		return inputStream;
+		
 	}
 	
 }

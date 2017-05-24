@@ -19,7 +19,7 @@ import org.apache.commons.logging.LogFactory;
 /**
  * Utility class containing methods to manage resource files.
  * 
- * @author Antonio Pecere: 18 mag 2016
+ * @author Antonio Pecere
  *
  */
 public class ResourceUtils

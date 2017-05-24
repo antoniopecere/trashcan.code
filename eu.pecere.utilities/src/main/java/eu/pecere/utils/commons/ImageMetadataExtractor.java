@@ -22,7 +22,6 @@ import com.drew.metadata.file.FileMetadataDirectory;
 
 /**
  * @author Antonio Pecere
- * @date 6 set 2016
  */
 public class ImageMetadataExtractor
 {

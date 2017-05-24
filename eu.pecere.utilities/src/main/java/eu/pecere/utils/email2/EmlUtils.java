@@ -1,4 +1,4 @@
-package eu.pecere.utils.email;
+package eu.pecere.utils.email2;
 
 import javax.mail.Session;
 
