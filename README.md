@@ -1,2 +1,2 @@
-# utilities
-Repository for projects of libraries with utility classes.
+# trashcan.code
+Code waiting to be refactored and managed...
